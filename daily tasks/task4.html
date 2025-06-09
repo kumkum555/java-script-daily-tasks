@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accordion Without CSS</title>
+</head>
+<body>
+
+  <div class="accordion">
+    <div class="item">
+      <h3>Section 1</h3>
+      <p style="display: none;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Explicabo labore qui quo odit porro cumque expedita aut nostrum odio,
+        perspiciatis consequuntur suscipit, repudiandae inventore deserunt possimus esse fuga amet doloribus?</p>
+    </div>
+
+    <div class="item">
+      <h3>Section 2</h3>
+      <p style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Qui ipsa iste excepturi omnis voluptates dolor, libero laboriosam natus neque.
+        Debitis, itaque eos soluta recusandae placeat eligendi dolore quam necessitatibus cumque.</p>
+    </div>
+
+    <div class="item">
+      <h3>Section 3</h3>
+      <p style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Doloribus quas rem quasi velit ipsa aspernatur,
+        vero minima quam ea ad reprehenderit sequi necessitatibus praesentium dolorum corporis esse. Quo, iure voluptatum?</p>
+    </div>
+
+    <div class="item">
+      <h3>Section 4</h3>
+      <p style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Doloribus quas rem quasi velit ipsa aspernatur,
+        vero minima quam ea ad reprehenderit sequi necessitatibus praesentium dolorum corporis esse. Quo, iure voluptatum?</p>
+    </div>
+
+    <div class="item">
+      <h3>Section 5</h3>
+      <p style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Doloribus quas rem quasi velit ipsa aspernatur,
+        vero minima quam ea ad reprehenderit sequi necessitatibus praesentium dolorum corporis esse. Quo, iure voluptatum?</p>
+    </div>
+  </div>
+
+  <script>
+    const accordion = document.querySelector('.accordion');
+
+    accordion.addEventListener('click', function(e) {
+      if (e.target.tagName === 'H3') {
+        const para = e.target.nextElementSibling;
+
+        
+        if (para.style.display === 'none') {
+          para.style.display = 'block';
+        } else {
+          para.style.display = 'none';
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Paragraphs</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="textContainer">
+    <p data-count="0">This is paragraph 1</p>
+    <p data-count="0">This is paragraph 2</p>
+    <p data-count="0">This is paragraph 3</p>
+    <p data-count="0">this is paragraph 4</p>
+    <p data-count="0">this is paragraph 5</p>
+    <p data-count="0">this is paragraph 6</p>
+    <p data-count="0">this is paragraph 7</p>
+    <p data-count="0">this is paragraph 8</p>
+
+  </div>
+
+ <script>
+  document.getElementById("textContainer").addEventListener("click", (e) => {
+    if (e.target.tagName === "P") {
+      const p = e.target;
+      const count = parseInt(p.getAttribute("data-count")) || 0;
+      const newCount = p.classList.toggle("highlight") ? count + 1 : count;
+      p.setAttribute("data-count", newCount);
+      p.textContent = `${p.textContent.split(" (Clicked")[0]} (Clicked ${newCount} times)`;
+    }
+  });
+</script>
+
+
+</body>
+</html>
